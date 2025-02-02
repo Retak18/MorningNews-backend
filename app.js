@@ -11,7 +11,12 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 const cors = require('cors');
-app.use(cors());
+app.use(cors({
+    origin:( 'http://localhost:3000',
+    'https://morning-news-frontend-phi.vercel.app'),
+     methods: 'GET,POST,PUT,DELETE',
+     allowedHeaders: 'Content-Type,Authorization'
+}));
 
 app.use(logger('dev'));
 app.use(express.json());
