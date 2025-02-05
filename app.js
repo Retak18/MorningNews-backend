@@ -12,9 +12,9 @@ var app = express();
 
 const cors = require('cors');
 app.use(cors({
-    AccessControlAllowOrigin: '*',
-    methods: 'GET,POST,PUT,DELETE',
-    allowedHeaders: 'Content-Type,Authorization'
+    origin: '*',
+    methods: ['GET,POST,PUT,DELETE'],
+    allowedHeaders: ['Content-Type,Authorization']
 }));
 // origin:( 'http://localhost:3000',
 // 'https://morning-news-frontend-phi.vercel.app'),
