@@ -1,23 +1,22 @@
 require('dotenv').config();
 
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
-var app = express();
+const app = express();
 
 const cors = require('cors');
 app.use(cors({
-    origin: '*',
+    origin: ['http://localhost:3000',
+    'https://morning-news-frontend-phi.vercel.app'],
     methods: ['GET,POST,PUT,DELETE'],
     allowedHeaders: ['Content-Type,Authorization']
 }));
-// origin:( 'http://localhost:3000',
-// 'https://morning-news-frontend-phi.vercel.app'),
 
 app.use(logger('dev'));
 app.use(express.json());
