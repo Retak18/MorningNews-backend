@@ -12,8 +12,11 @@ const app = express();
 
 const cors = require('cors');
 app.use(cors({
-    origin: ['http://localhost:3000',
-    'https://morning-news-frontend-phi.vercel.app'],
+    origin: [
+        'http://localhost:3000',
+        'https://morning-news-frontend-phi.vercel.app',
+        'https://morning-news-fontend-phi.vercel.app',
+        ],
     methods: ['GET,POST,PUT,DELETE'],
     allowedHeaders: ['Content-Type,Authorization']
 }));
